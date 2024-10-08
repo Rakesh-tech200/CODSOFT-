@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
+}
+
+.cal {
+  width: 300px;
+  border: 2px solid #ccc;
+  padding: 30px 15px 15px 15px;
+  background-color: #4A90E2; 
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding-top: 70px; 
+  animation: pop 0.5s ease-in-out; 
+}
+
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); } 
+  100% { transform: scale(1); }
+}
+
+.header {
+  font-size: 22px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: -40px; 
+  left: 50%;
+  transform: translateX(-50%);
+  animation: swing 2s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+
+@keyframes swing {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  25% { transform: translateX(-50%) rotate(10deg); }
+  50% { transform: translateX(-50%) rotate(0deg); }
+  75% { transform: translateX(-50%) rotate(-10deg); }
+  100% { transform: translateX(-50%) rotate(0deg); }
+}
+
+#display {
+  width: 100%;
+  height: 50px;
+  font-size: 24px;
+  text-align: right;
+  padding-right: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+}
+
+
+.cal:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+button {
+  width: 60px; 
+  height: 60px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%; 
+  background-color: #ffcccb;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:active {
+  background-color: #ff7f7f;
+}
+
+button.zero {
+  grid-column: span 2; 
+  width: 100%; 
+  border-radius: 30px; 
+}
+
+button:last-child {
+  background-color: #4CAF50;
+  color: white;
+}
+
+button:last-child:hover {
+  background-color: #45a049;
+}
+
+button:hover {
+  background-color: #ffa07a;
+}
